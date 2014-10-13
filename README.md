@@ -38,7 +38,8 @@ sm_donormenu_admins		"0" //Show a list of online admins in the menu
 
 ##Changelog
 ```
-*1.1* - Restricted !donor command to players only with "a" flag.
+*1.1.1* - Fixed Bug: Online Admins shows up as Map Rotation in Menu
+1.1 - Restricted !donor command to players only with "a" flag.
 1.0 - Added a Welcome Message. Removed Map Rotation. Added cvar for a Admin menu.
 0.3 - Modified code so it can work alongside HelpMenu
 0.2 - Fixed Menu saying "Help Menu" rather than "Donor Menu"

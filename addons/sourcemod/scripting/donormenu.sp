@@ -10,7 +10,7 @@
 
 #include <sourcemod>
 
-#define PLUGIN_VERSION "1.1"
+#define PLUGIN_VERSION "1.1.1"
 
 enum ChatCommand {
 	String:command[32],
@@ -174,7 +174,6 @@ Help_ShowMainMenu(client) {
 		GetArrayArray(g_DonorMenus, i, hmenu[0]);
 		AddMenuItem(menu, menuid, hmenu[name]);
 	}
-	AddMenuItem(menu, "maplist", "Map Rotation");
 	if (GetConVarBool(g_cvarAdmins))
 		AddMenuItem(menu, "admins", "List Online Admins");
 	DisplayMenu(menu, client, 30);
