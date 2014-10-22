@@ -9,8 +9,12 @@
 #pragma semicolon 1
 
 #include <sourcemod>
+#undef REQUIRE_PLUGIN
+#include <updater>
 
-#define PLUGIN_VERSION "1.1.1"
+#define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-DonorMenu/master/updater.txt"
+
+#define PLUGIN_VERSION "1.2"
 
 enum ChatCommand {
 	String:command[32],
@@ -23,7 +27,7 @@ enum DonorMenuType {
 }
 
 enum DonorMenu {
-	String:name[32],
+	String:dname[32],
 	String:title[128],
 	DonorMenuType:type,
 	Handle:items,
@@ -47,7 +51,7 @@ public Plugin:myinfo =
 	description = "Display a Donor menu to users",
 	version = PLUGIN_VERSION,
 	url = "http://www.v33r.tk"
-};
+}
 
 public OnPluginStart() {
 	CreateConVar("sm_donormenu_version", PLUGIN_VERSION, "Donor menu version", FCVAR_PLUGIN|FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY);
@@ -60,6 +64,19 @@ public OnPluginStart() {
 	ParseConfigFile(hc);
 
 	AutoExecConfig(false);
+	
+	if (LibraryExists("updater"))
+        {
+        	Updater_AddPlugin(UPDATE_URL);
+    	}
+}
+
+public OnLibraryAdded(const String:name[])
+{
+	if (StrEqual(name, "updater"))
+	{
+		Updater_AddPlugin(UPDATE_URL);
+	}
 }
 
 public OnMapStart() {
@@ -107,7 +124,7 @@ public SMCResult:Config_NewSection(Handle:parser, const String:section[], bool:q
 	g_configLevel++;
 	if (g_configLevel == 1) {
 		new hmenu[DonorMenu];
-		strcopy(hmenu[name], sizeof(hmenu[name]), section);
+		strcopy(hmenu[dname], sizeof(hmenu[dname]), section);
 		hmenu[items] = CreateDataPack();
 		hmenu[itemct] = 0;
 		if (g_DonorMenus == INVALID_HANDLE)
@@ -172,7 +189,7 @@ Help_ShowMainMenu(client) {
 	for (new i = 0; i < msize; ++i) {
 		Format(menuid, sizeof(menuid), "DonorMenu_%d", i);
 		GetArrayArray(g_DonorMenus, i, hmenu[0]);
-		AddMenuItem(menu, menuid, hmenu[name]);
+		AddMenuItem(menu, menuid, hmenu[dname]);
 	}
 	if (GetConVarBool(g_cvarAdmins))
 		AddMenuItem(menu, "admins", "List Online Admins");
