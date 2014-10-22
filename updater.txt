@@ -7,7 +7,7 @@
 			"Latest"	"1.2"
 		}
 		
-		"Notes"	"More info @ www.github.com Changes in 1.1:"
+		"Notes"	"More info @ www.github.com Changes in 1.2:"
 		"Notes"	"Added Updater Support"
 	}
 	

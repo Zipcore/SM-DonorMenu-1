@@ -67,4 +67,4 @@ Overrides
 ##Credits
 This is a heavily modified version of [HelpMenu v0.3](https://forums.alliedmods.net/showthread.php?t=72576)
 
-[HelpMenu 0.3 vs. Donor Menu 1.1](https://www.diffchecker.com/wwds6yne)
+[HelpMenu 0.3 vs. Donor Menu 1.2](https://www.diffchecker.com/k4wuznvv)
