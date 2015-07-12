@@ -4,18 +4,18 @@
 	{
 		"Version"
 		{
-			"Latest"	"1.2"
+			"Latest"	"1.3"
 		}
 		
-		"Notes"	"More info @ www.github.com Changes in 1.2:"
-		"Notes"	"Added Updater Support"
+		"Notes"	"More info @ github.com/Sarabveer/SM-DonorMenu Changes in 1.3:"
+		"Notes"	"New Binary, Compiled with SM 1.7, Fixed Updater"
 	}
 	
 	"Files"
 	{
-		"Plugin"	"https://raw.githubusercontent.com/Sarabveer/SM-DonorMenu/master/addons/sourcemod/plugins/donormenu.smx"
-		"Plugin"	"https://raw.githubusercontent.com/Sarabveer/SM-DonorMenu/master/addons/sourcemod/translations/donormenu.phrases.txt"
+		"Plugin"	"Path_SM/plugins/donormenu.smx"
+		"Plugin"	"Path_SM/translations/donormenu.phrases.txt"
 
-		"Source"	"https://raw.githubusercontent.com/Sarabveer/SM-DonorMenu/master/addons/sourcemod/scripting/donormenu.sp"
+		"Source"	"Path_SM/scripting/donormenu.sp"
 	}
 }

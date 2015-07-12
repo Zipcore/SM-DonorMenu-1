@@ -1,18 +1,24 @@
-language: cpp
-compiler: clang
+#Use the new container-based infrastructure
+sudo: false
 
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y g++-multilib
+#Install some apt packages needed for spcomp
+addons:
+  apt_packages:
+    - lib32stdc++6
 
-install:
-  - wget http://www.sourcemod.net/smdrop/1.6/sourcemod-1.6.3-git4580-linux.tar.gz -O /tmp/sourcemod.tar.gz
-  - tar -xzvf /tmp/sourcemod.tar.gz
+#Set the build environment
+env:
+  - SOURCEMOD=1.7.2
 
+#And compile!
 before_script:
-  - chmod +rx addons/sourcemod/scripting/spcomp
-  - chmod +rx addons/sourcemod/scripting/compile.sh
+  - SMFILE="sourcemod-$SOURCEMOD-linux.tar.gz"
+  - wget http://www.gsptalk.com/mirror/sourcemod/$SMFILE -O $SMFILE
+  - tar -xzf $SMFILE
+  - mv scripting/donormenu.sp addons/sourcemod/scripting/
   - cd addons/sourcemod/scripting/
-  
+  - wget https://bitbucket.org/GoD_Tony/updater/raw/53ebb3e27e5a43bc46dc52dc0de76ac2fb48cd9e/include/updater.inc -O include/updater.inc
+  - chmod +x spcomp
+
 script:
-  - ./spcomp donormenu.sp
+  - ./compile.sh donormenu.sp

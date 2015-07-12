@@ -1,6 +1,6 @@
 /*
  * In-game Donor Menu
- * Modified by Sarabveer (admin@v33r.cf)
+ * Modified by Sarabveer (sarabveer@sarabveer.me)
  * Help Menu: Originally Written by chundo (chundo@mefightclub.com)
  *
  * Licensed under the GPL version 3
@@ -14,7 +14,7 @@
 
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-DonorMenu/master/updater.txt"
 
-#define PLUGIN_VERSION "1.2"
+#define PLUGIN_VERSION "1.3"
 
 enum ChatCommand {
 	String:command[32],
@@ -50,12 +50,12 @@ public Plugin:myinfo =
 	author = "Sarabveer(VEER™)",
 	description = "Display a Donor menu to users",
 	version = PLUGIN_VERSION,
-	url = "http://www.v33r.tk"
+	url = "https://www.sarabveer.me"
 }
 
 public OnPluginStart() {
 	CreateConVar("sm_donormenu_version", PLUGIN_VERSION, "Donor menu version", FCVAR_PLUGIN|FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY);
-	g_cvarWelcome = CreateConVar("sm_donormenu_welcome", "1", "Show welcome message to newly connected users.", FCVAR_PLUGIN);
+	g_cvarWelcome = CreateConVar("sm_donormenu_welcome", "0", "Show welcome message to newly connected users.", FCVAR_PLUGIN);
 	g_cvarAdmins = CreateConVar("sm_donormenu_admins", "0", "Show a list of online admins in the menu.", FCVAR_PLUGIN);
 	RegAdminCmd("sm_donor", Command_DonorMenu, ADMFLAG_KICK, "Display the Donor menu.");
 	
@@ -66,9 +66,9 @@ public OnPluginStart() {
 	AutoExecConfig(false);
 	
 	if (LibraryExists("updater"))
-        {
-        	Updater_AddPlugin(UPDATE_URL);
-    	}
+    {
+        Updater_AddPlugin(UPDATE_URL);
+	}
 }
 
 public OnLibraryAdded(const String:name[])
@@ -171,7 +171,7 @@ public SMCResult:Config_EndSection(Handle:parser) {
 
 public Config_End(Handle:parser, bool:halted, bool:failed) {
 	if (failed)
-		SetFailState("Plugin configuration error");
+		SetFailState("DonorMenu: Plugin Configuration Error");
 }
 
 public Action:Command_DonorMenu(client, args) {

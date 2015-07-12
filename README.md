@@ -1,4 +1,4 @@
-[ANY] Donor Menu
+[ANY] Donor Menu [![Build Status](https://travis-ci.org/Sarabveer/SM-DonorMenu.svg?branch=master)](https://travis-ci.org/Sarabveer/SM-DonorMenu)
 ============
 This is basically designed so you can have a Donor Menu without the hassle, just put the VIP commands in donors.cfg.
 
@@ -38,7 +38,8 @@ sm_donormenu_admins		"0" //Show a list of online admins in the menu
 
 ##Changelog
 ```
-*1.2* - Added Updater Support
+*1.3* - New Binary, Compiled with SM 1.7, Fixed Updater
+1.2 - Added Updater Support
 1.1.1 - Fixed Bug: Online Admins shows up as Map Rotation in Menu
 1.1 - Restricted !donor command to players only with "a" flag.
 1.0 - Added a Welcome Message. Removed Map Rotation. Added cvar for a Admin menu.
@@ -61,8 +62,6 @@ Overrides
 	"command"//<--Put Command Here	"abc"//<--Put Admin Flag Here
 }
 ```
-##Build Status
-[![Build Status](https://travis-ci.org/Sarabveer/SM-DonorMenu.svg?branch=master)](https://travis-ci.org/Sarabveer/SM-DonorMenu)
 
 ##Credits
 This is a heavily modified version of [HelpMenu v0.3](https://forums.alliedmods.net/showthread.php?t=72576)
