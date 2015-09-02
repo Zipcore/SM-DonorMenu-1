@@ -1,10 +1,24 @@
-/*
- * In-game Donor Menu
- * Modified by Sarabveer (sarabveer@sarabveer.me)
- * Help Menu: Originally Written by chundo (chundo@mefightclub.com)
- *
- * Licensed under the GPL version 3
- */
+//  Donor Menu (C) 2014 Sarabveer Singh <sarabveer@sarabveer.me>
+//  
+//  Donor Menu is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, per version 3 of the License.
+//  
+//  Donor Menu is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//  
+//  You should have received a copy of the GNU General Public License
+//  along with Donor Menu. If not, see <http://www.gnu.org/licenses/>.
+//
+//  This file incorporates work covered by the following copyright(s):   
+//
+//   Help Menu 0.3
+//   Copyright (C) 2008 chundo <chundo@mefightclub.com>
+//   Licensed under GNU GPL version 3
+//   Page: <https://forums.alliedmods.net/showthread.php?p=637467>
+//
 
 #pragma semicolon 1
 
@@ -12,9 +26,8 @@
 #undef REQUIRE_PLUGIN
 #include <updater>
 
-#define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-DonorMenu/master/updater.txt"
-
-#define PLUGIN_VERSION "1.3"
+#define PLUGIN_VERSION "1.4"
+#define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/donormenu/updater.txt"
 
 enum ChatCommand {
 	String:command[32],
